@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5 | JavaScript Basics</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 32px 18px; font-family: Arial, sans-serif; background: #f1f5f9; color: #182539; }
+        main { width: min(960px, 100%); margin: 0 auto; }
+        .eyebrow { color: #2563eb; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 700; }
+        h1 { margin: 10px 0; font-size: clamp(30px, 5vw, 50px); }
+        .description { line-height: 1.7; color: #526174; }
+        .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 32px; }
+        article { padding: 24px; background: white; border-radius: 16px; border: 1px solid #e1e8f2; box-shadow: 0 8px 24px rgba(20,37,61,.05); }
+        .number { display: inline-block; padding: 7px 12px; background: #dbeafe; color: #1d4ed8; border-radius: 20px; font-size: 13px; font-weight: 700; }
+        article h2 { margin: 18px 0 8px; }
+        article p { min-height: 75px; color: #526174; line-height: 1.6; }
+        a.button { display: inline-block; padding: 11px 16px; border-radius: 9px; background: #2563eb; color: white; text-decoration: none; font-weight: 700; }
+        a.button:hover, a.button:focus-visible { background: #1d4ed8; }
+        @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } article p { min-height: auto; } }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="eyebrow">JavaScript Basics / DOM & Events</p>
+        <h1>Assignment 5</h1>
+        <p class="description">Three interactive mini-projects built with HTML, CSS and vanilla JavaScript.</p>
+        <div class="grid">
+            <article>
+                <span class="number">TASK 1 / OPTION A</span>
+                <h2>Higher or Lower</h2>
+                <p>Guess the next rating, keep your streak and protect your three lives.</p>
+                <a class="button" href="task1/index.html">Play game</a>
+            </article>
+            <article>
+                <span class="number">TASK 2 / OPTION B</span>
+                <h2>PC Configurator</h2>
+                <p>Build a computer with compatible parts, set a budget and compare builds.</p>
+                <a class="button" href="task2/index.html">Build a PC</a>
+            </article>
+            <article>
+                <span class="number">TASK 3 / OPTION B</span>
+                <h2>Character Creator</h2>
+                <p>Create a hero with live validation, class rules and a character preview.</p>
+                <a class="button" href="task3/index.html">Create a hero</a>
+            </article>
+        </div>
+    </main>
+</body>
+</html>

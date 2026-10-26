@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher or Lower - Task 1</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="task1.js" defer></script>
+</head>
+<body>
+    <main class="game">
+        <h1>Higher or Lower</h1>
+        <p class="intro">Guess if the next rating will be higher or lower. Equal ratings count as correct.</p>
+        <p id="rules" class="rules"></p>
+
+        <div class="rating-box">
+            <p>Current rating</p>
+            <p id="current-rating" class="rating">-</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <span>Lives</span>
+                <strong id="lives">-</strong>
+            </div>
+            <div class="stat">
+                <span>Streak</span>
+                <strong id="streak">-</strong>
+            </div>
+            <div class="stat">
+                <span>Best streak</span>
+                <strong id="best-streak">-</strong>
+            </div>
+        </div>
+
+        <form id="guess-form" novalidate>
+            <label for="guess">Your guess</label>
+            <div class="controls">
+                <select id="guess" name="guess">
+                    <option value="">Select an option</option>
+                    <option value="higher">Higher</option>
+                    <option value="lower">Lower</option>
+                </select>
+                <button id="guess-button" type="submit">Guess</button>
+            </div>
+        </form>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+        <button id="restart-button" class="restart" type="button">Restart</button>
+    </main>
+</body>
+</html>

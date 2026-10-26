@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3B | Character Creator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="task3.js" defer></script>
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <a href="../index.html">← All tasks</a>
+            <span>Assignment 5 · Task 3B</span>
+        </header>
+        <div class="heading">
+            <p class="kicker">EVENTS · VALIDATION · LIVE PREVIEW</p>
+            <h1>Character Creator</h1>
+            <p>Create a hero. Give them exactly 20 skill points and meet the class requirements.</p>
+        </div>
+
+        <main class="layout">
+            <section class="panel form-panel">
+                <h2>Character details</h2>
+                <div id="error-summary" class="error-summary" role="alert" hidden></div>
+                <form id="character-form">
+                    <div class="field">
+                        <label for="hero-name">Character name</label>
+                        <input id="hero-name" name="heroName" type="text" required minlength="3" maxlength="20" autocomplete="off" aria-describedby="error-hero-name" placeholder="e.g. Luna Knight">
+                        <small id="error-hero-name" class="field-error"></small>
+                        <small class="hint">3–20 characters. Alex, Nova and Shadow are already taken.</small>
+                    </div>
+                    <div class="two-fields">
+                        <div class="field">
+                            <label for="hero-class">Class</label>
+                            <select id="hero-class" name="heroClass" required aria-describedby="error-hero-class">
+                                <option value="">Choose class</option>
+                                <option value="Warrior">Warrior</option>
+                                <option value="Mage">Mage</option>
+                                <option value="Ranger">Ranger</option>
+                            </select>
+                            <small id="error-hero-class" class="field-error"></small>
+                        </div>
+                        <div class="field">
+                            <label for="hero-color">Character color</label>
+                            <select id="hero-color" name="heroColor" required aria-describedby="error-hero-color">
+                                <option value="">Choose color</option>
+                                <option value="blue">Blue</option>
+                                <option value="purple">Purple</option>
+                                <option value="green">Green</option>
+                                <option value="red">Red</option>
+                            </select>
+                            <small id="error-hero-color" class="field-error"></small>
+                        </div>
+                    </div>
+
+                    <fieldset class="skill-set">
+                        <legend>Skill points</legend>
+                        <p class="hint">Each skill is 1–10. The total must be exactly 20. Every class needs its main skill at least 6.</p>
+                        <div class="two-fields">
+                            <div class="field">
+                                <label for="strength">Strength</label>
+                                <input id="strength" name="strength" type="number" required min="1" max="10" step="1" value="5" aria-describedby="error-strength">
+                                <small id="error-strength" class="field-error"></small>
+                            </div>
+                            <div class="field">
+                                <label for="magic">Magic</label>
+                                <input id="magic" name="magic" type="number" required min="1" max="10" step="1" value="5" aria-describedby="error-magic">
+                                <small id="error-magic" class="field-error"></small>
+                            </div>
+                            <div class="field">
+                                <label for="agility">Agility</label>
+                                <input id="agility" name="agility" type="number" required min="1" max="10" step="1" value="5" aria-describedby="error-agility">
+                                <small id="error-agility" class="field-error"></small>
+                            </div>
+                            <div class="field">
+                                <label for="intelligence">Intelligence</label>
+                                <input id="intelligence" name="intelligence" type="number" required min="1" max="10" step="1" value="5" aria-describedby="error-intelligence">
+                                <small id="error-intelligence" class="field-error"></small>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <p class="balance-rule">Balance rule: highest skill minus lowest skill must be at most 6.</p>
+                    <div class="form-actions">
+                        <button class="primary" type="submit">Create character</button>
+                        <button class="secondary" id="reset-button" type="button">Reset form</button>
+                    </div>
+                </form>
+            </section>
+
+            <aside class="preview-panel">
+                <h2>Live preview</h2>
+                <article id="preview-card" class="preview-card theme-neutral" aria-live="polite">
+                    <div class="avatar">★</div>
+                    <p class="preview-label">YOUR HERO</p>
+                    <h3 id="preview-name">Your hero</h3>
+                    <p id="preview-class" class="preview-class">Choose a class</p>
+                    <div id="preview-skills" class="preview-skills"></div>
+                </article>
+                <div id="points-status" class="points">Points remaining: 0</div>
+                <p class="preview-help">The card updates as you type. Validation messages appear after you interact with each field.</p>
+            </aside>
+        </main>
+
+        <section id="result-area" class="result-area" aria-live="polite"></section>
+    </div>
+</body>
+</html>

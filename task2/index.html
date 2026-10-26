@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2B | PC Configurator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="task2.js" defer></script>
+</head>
+<body>
+    <div class="page" id="builder-app">
+        <header class="topbar">
+            <a href="../index.html" class="back-link">← All tasks</a>
+            <span class="task-label">Assignment 5 · Task 2B</span>
+        </header>
+        <div class="heading">
+            <span class="kicker">ARRAYS · LOOPS · FUNCTIONS · DOM</span>
+            <h1>Build your perfect PC</h1>
+            <p>Choose one CPU, GPU and RAM kit. Check compatibility, stay under budget and save up to three builds.</p>
+        </div>
+
+        <div class="layout">
+            <main>
+                <section class="panel filters" aria-label="Filter PC parts">
+                    <div class="control">
+                        <label for="budget">Your budget ($)</label>
+                        <input id="budget" type="number" min="450" max="2000" step="10" value="900">
+                    </div>
+                    <div class="control">
+                        <label for="search">Search parts</label>
+                        <input id="search" type="search" placeholder="e.g. DDR5 or Ryzen">
+                    </div>
+                    <div class="control">
+                        <label for="filter">Category</label>
+                        <select id="filter">
+                            <option value="all">All parts</option>
+                            <option value="CPU">Processors</option>
+                            <option value="GPU">Graphics cards</option>
+                            <option value="RAM">Memory kits</option>
+                        </select>
+                    </div>
+                </section>
+                <p id="notification" class="notice info" role="status" aria-live="polite">Start by selecting a processor.</p>
+                <div id="catalog" class="catalog"></div>
+            </main>
+
+            <aside class="sidebar">
+                <section class="panel">
+                    <h2>Your selection</h2>
+                    <div id="selected-items"></div>
+                    <div id="total" class="total-box"></div>
+                    <div class="button-row">
+                        <button data-action="save" class="primary" type="button">Save build</button>
+                        <button data-action="clear" class="secondary" type="button">Clear</button>
+                    </div>
+                </section>
+                <section class="panel">
+                    <div class="section-header">
+                        <h2>Saved builds</h2>
+                        <span id="saved-count" class="count"></span>
+                    </div>
+                    <div id="saved-builds"></div>
+                </section>
+            </aside>
+        </div>
+
+        <section class="panel comparison">
+            <h2>Compare saved builds</h2>
+            <div id="comparison-table"></div>
+        </section>
+        <p class="footnote">Prices and compatibility profiles are fictional and used for this JavaScript exercise.</p>
+    </div>
+</body>
+</html>
